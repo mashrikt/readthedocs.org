@@ -163,7 +163,7 @@ class PythonEnvironment(object):
         with open(self.environment_json_path(), 'w') as fpath:
             # Compatibility for Py2 and Py3. ``io.TextIOWrapper`` expects
             # unicode but ``json.dumps`` returns str in Py2.
-            fpath.write(unicode(json.dumps(data)))
+            fpath.write(json.dumps(data))
 
 
 class Virtualenv(PythonEnvironment):
